@@ -6,12 +6,17 @@ print('********************************')
 
 #definindo o numero secreto
 numerosecreto= round(random.random()*100)
-print(numerosecreto)
+#print(numerosecreto)
+
 rodada = 1 
 #definindo o numero de tentativas
-#numerotentativas= 10
+numerotentativas= 10
 
-while(rodada <= 3):
+print("Qual o nivel de dificuldade?")
+print("(1)-Facil, (2)-Medio, (3)-Dificil")
+
+nivel = int(input('Defina '))
+while(rodada <= numerotentativas):
     print('tentativas', rodada, 'de', numerotentativas)
 
 #recebendo o chute do jogador

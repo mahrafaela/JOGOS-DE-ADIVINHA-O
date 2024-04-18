@@ -16,6 +16,15 @@ print("Qual o nivel de dificuldade?")
 print("(1)-Facil, (2)-Medio, (3)-Dificil")
 
 nivel = int(input('Defina '))
+
+if(nivel == 1):
+    numeroTentativas = 15
+elif(nivel == 2):
+    numeroTentativas = 8
+else:
+    numeroTentativas = 5  
+
+
 while(rodada <= numerotentativas):
     print('tentativas', rodada, 'de', numerotentativas)
 

@@ -1,47 +1,53 @@
 import random;
 
-print('********************************')
-print('bem vindo ao JOGO DE ADIVINHAÇÃO')
-print('********************************')
+print('**********************************')
+print('Bem vindo, ao JOGO DE ADIVINHAÇÃ0')
+print('**********************************')
 
-#definindo o numero secreto
-numerosecreto= round(random.random()*100)
-#print(numerosecreto)
+#Definindo o número secreto
+numeroSecreto = random.randrange(1,101)
+#print(numeroSecreto)
+#Definindo o número de tentativas
+numeroTentativas = 0
+rodada = 1
+pontos = 1000
 
-rodada = 1 
-#definindo o numero de tentativas
-numerotentativas= 10
+print('Qual o nível de dificuldade?')
+print('(1)-Fácil, (2)-Médio, (3)-Difícil, (4)-Hacker')
 
-print("Qual o nivel de dificuldade?")
-print("(1)-Facil, (2)-Medio, (3)-Dificil")
+nível = int(input('Defina o nível: '))
 
-nivel = int(input('Defina '))
 
-if(nivel == 1):
+#Vamos mudar o número de tentativas conforme a dificuldade
+if(nível == 1) {
     numeroTentativas = 15
-elif(nivel == 2):
-    numeroTentativas = 8
+elif(nível == 2):
+    numeroTentativas = 10
+elif(nível == 3):
+    numeroTentativas = 5   
 else:
-    numeroTentativas = 5  
+    numeroTentativas = 3    
+}     
 
-
-while(rodada <= numerotentativas):
-    print('tentativas', rodada, 'de', numerotentativas)
-
-#recebendo o chute do jogador
-    chuteString= input('Digite um número ente 1 a 100:')
+while(rodada<= numeroTentativas):
+    print('Tentativa',rodada, 'de' , numeroTentativas)
+#Recebendo o chute do jogador
+    chuteString = input('Digite um número entre 1 e 100: ')
     chute = int(chuteString)
 
-    #print('Você digitou o número', chuteString)
-    
+#Declarando as condições 
+    if (numeroSecreto == chute):
+        print('Você acertou!!!!')
+        Break
+    elif(chute>numeroSecreto):
+        print('Você errou!! O número secreto é um número menor')
+    else:
+        print('Você errou!!! O número secreto é um número maior')
+    pontos_perdidos = abs (numeroSecreto - chute); 
+    pontos = pontos - pontos_perdidos  
 
-#declarando as condições
-    if (numerosecreto == chute):
-        print('Você acertou!')
-        break
-    elif(chute>numerosecreto):
-        print('você errou! O numero secreto é um numero menor')
-    else: 
-        print('você errou! o numero secreto é um numero maior')       
-    #numerotentativas = numerotentativas - 1    
-    rodada = rodada+1   
+    #numeroTentativas = numeroTentativas - 1
+    rodada = rodada + 1
+    #Aula Elif 26.02.24  
+
+

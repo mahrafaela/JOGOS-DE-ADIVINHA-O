@@ -19,15 +19,15 @@ nível = int(input('Defina o nível: '))
 
 
 #Vamos mudar o número de tentativas conforme a dificuldade
-if(nível == 1) {
-    numeroTentativas = 15
+if(nível == 1):
+    numeroTentativas = 20
 elif(nível == 2):
-    numeroTentativas = 10
+    numeroTentativas = 15
 elif(nível == 3):
-    numeroTentativas = 5   
+    numeroTentativas = 10
 else:
     numeroTentativas = 3    
-}     
+     
 
 while(rodada<= numeroTentativas):
     print('Tentativa',rodada, 'de' , numeroTentativas)
@@ -37,17 +37,21 @@ while(rodada<= numeroTentativas):
 
 #Declarando as condições 
     if (numeroSecreto == chute):
-        print('Você acertou!!!!')
-        Break
+        print('Você acertou! E sua pontuação foi:', pontos)
+        break
     elif(chute>numeroSecreto):
         print('Você errou!! O número secreto é um número menor')
     else:
         print('Você errou!!! O número secreto é um número maior')
     pontos_perdidos = abs (numeroSecreto - chute); 
     pontos = pontos - pontos_perdidos  
-
     #numeroTentativas = numeroTentativas - 1
     rodada = rodada + 1
+
+
+
+
+
     #Aula Elif 26.02.24  
 
 
